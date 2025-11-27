@@ -1,0 +1,19 @@
+facility_id        – Unique facility identifier
+obligor_id         – Unique corporate obligor id
+group_id           – Corporate group id (parent group)
+obligor_name       – Synthetic obligor name
+group_name         – Synthetic group name
+country            – Country of risk
+region             – Region (e.g. North America, EMEA)
+sector             – Sector (Manufacturing, Energy, etc.)
+product_type       – Term_Loan, Revolver, Guarantee, etc.
+internal_rating    – Internal rating grade (1 = best, 10 = worst)
+rating_band        – Investment_Grade, Sub_IG, Watchlist
+currency           – Exposure currency (USD, EUR, GBP)
+limit_amount       – Facility limit
+outstanding_amount – Current drawn amount
+undrawn_amount     – Unused limit
+collateral_value   – Value of collateral
+origination_date   – Origination / approval date
+maturity_date      – Contract maturity date
+interest_rate      – Contract interest rate (%)
