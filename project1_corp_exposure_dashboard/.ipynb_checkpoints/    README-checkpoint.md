@@ -1,10 +1,10 @@
 # Project 1 – Corporate Exposure & Concentration Dashboard
 
 **Goal:** Monitor large corporate exposures and concentration risk by
-obligor, sector, and country, similar to the reporting used in wholesale /
+obligor, sector, and country, similar to reporting used in wholesale /
 corporate banking.
 
-This project uses synthetic data to mirror the type of portfolio- and
+This project uses synthetic data to mirror the type of portfolio and
 limit-monitoring work I did with large corporate customers.
 
 ---
@@ -25,7 +25,7 @@ limit-monitoring work I did with large corporate customers.
   - `collateral_value`, `maturity_date`, `origination_date`
   - `is_defaulted` (0/1)
 
-- `data/corp_limits.csv` 
+- `data/corp_limits.csv`  
   Simple limit table to illustrate **single-name, sector, and country limits**.
 
   Example columns:
@@ -52,19 +52,19 @@ See `docs/project1_data_dictionary.txt` for full column descriptions.
 
 ## Approach
 
-1. **Exploratory analysis (01_eda_exposure.ipynb)**  
+1. **Exploratory analysis (`01_eda_exposure.ipynb`)**  
    - Clean and inspect the exposure snapshot.  
    - Compute key KPIs:
      - Total limits and outstanding exposure.
      - Top 20 groups and their share of the portfolio.
      - Exposure by sector, country, and rating_band.
 
-2. **Concentration analysis (02_concentration_analysis.ipynb)**  
+2. **Concentration analysis (`02_concentration_analysis.ipynb`)**  
    - Portfolio concentration metrics (e.g. share of top N obligors).  
-   - Exposure vs limits from `corp_limits.csv` (headroom, breach flags).  
-   - Simple rating distribution and sector/country cross-tabs.
+   - Exposure vs limits from `corp_limits.csv` (headroom vs limit).  
+   - Rating distribution and sector/country cross-tabs.
 
-3. **Dashboard prep (03_dashboard_prep.ipynb)**  
+3. **Dashboard prep (`03_dashboard_prep.ipynb`)**  
    - Create aggregated tables for a Power BI / Tableau dashboard:
      - Top 20 groups table.
      - Exposure by sector / country / rating_band.
@@ -72,9 +72,34 @@ See `docs/project1_data_dictionary.txt` for full column descriptions.
 
 4. **Dashboard (Power BI / Tableau)**  
    - Design a **“Corporate Exposure Overview”** dashboard with:
-     - KPI cards (Total Exposure, # Groups, % in Top 20, etc.).
+     - KPI cards (total limits, outstanding, undrawn, utilisation).
      - Bar charts for sector and country concentrations.
-     - Matrix or table for group-level exposures and headroom.
+     - A visual for rating-band distribution.
+     - A table for group-level exposures, portfolio share, and headroom vs limits.
+
+---
+
+## Power BI Dashboard – Corporate Exposure Overview
+
+**File:** `bi/corp_exposure_overview.pbix`  
+**Screenshot:** `bi/corp_exposure_overview.png`  
+**Data source:** aggregated CSVs from `data/dashboard/` generated in `03_dashboard_prep.ipynb`.
+
+The dashboard is designed to look like a simple internal risk/portfolio view for a
+wholesale corporate loan book:
+
+- **Top KPI cards** show total limits, outstanding exposure, undrawn amount, and
+  overall utilisation for the portfolio.
+- **Sector and country bar charts** highlight where exposure is concentrated by
+  industry and geography.
+- A **rating-band visual** shows the split between Investment Grade, Sub-IG, and
+  Watchlist exposure.
+- A **Top 20 corporate groups table** combines outstanding exposure, portfolio
+  share, and (optionally) single-name limits and utilisation vs those limits.
+
+All visuals are fed by small, version-controlled CSV tables created in the
+Python notebooks, so the BI layer stays thin and the business logic is
+reproducible.
 
 ---
 
@@ -83,6 +108,19 @@ See `docs/project1_data_dictionary.txt` for full column descriptions.
 - **Datasets**
   - `data/corp_exposure_snapshot.csv` – synthetic corporate exposure snapshot.
   - `data/corp_limits.csv` – example limits for single-name / sector / country.
+
+- **Data (dashboard-ready CSVs)** – saved in `data/dashboard/` by `03_dashboard_prep.ipynb`:
+  - `dashboard_kpis.csv` – total limit, total outstanding, total undrawn, utilisation.
+  - `dashboard_top20_groups.csv` – Top 20 corporate groups with exposure, portfolio share,
+    single-name limits, and utilisation vs those limits.
+  - `dashboard_sector_exposure.csv` – outstanding exposure and share by sector
+    (with sector limits if available).
+  - `dashboard_country_exposure.csv` – outstanding exposure and share by country
+    (with country limits if available).
+  - `dashboard_rating_exposure.csv` – exposure and share by rating band
+    (Investment Grade, Sub-IG, Watchlist).
+  - `dashboard_exposure_long.csv` – optional long-format table with dimension_type
+    (Sector / Country / Rating_Band) and dimension_value for flexible visuals.
 
 - **Notebooks**
   - `notebooks/00_generate_corp_exposure_data.ipynb` – (optional) data generator.
@@ -95,6 +133,12 @@ See `docs/project1_data_dictionary.txt` for full column descriptions.
 
 - **Report**
   - `reports/project1_exposure_concentration_summary.md` – business summary of key findings.
+
+- **Power BI dashboard**
+  - `bi/corp_exposure_overview.pbix` – “Corporate Exposure Overview” page with KPI cards,
+    sector/country/rating visuals, and a Top 20 corporate groups table.
+  - `bi/corp_exposure_overview.png` – screenshot of the main dashboard view for quick
+    preview on GitHub/LinkedIn.
 
 All data is **synthetic and generated in Python**.  
 No real bank, customer, or exposure data is used.
