@@ -1,0 +1,8 @@
+# Git – Quick Commands I Always Use
+
+After I make changes in this repo (edit notebooks, README, SQL, etc.), I run these commands in the terminal from the project folder:
+
+```bash
+git add .
+git commit -m "Describe what you changed"
+git push
