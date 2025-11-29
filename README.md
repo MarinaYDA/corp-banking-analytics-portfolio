@@ -1,14 +1,22 @@
 # Corporate Banking Analytics Portfolio (Synthetic Data)
 
-This repository showcases my **corporate / wholesale banking analytics** work
-using fully synthetic data. It focuses on the types of analysis I did with
-**large corporate customers** (not retail):
+This repository shows how I would approach **corporate / wholesale banking
+analytics today**, using fully synthetic data.
 
-- Exposure & concentration analysis for a corporate loan book.
-- Early-warning modeling to flag obligors at risk of default.
-- Clean, reproducible Python / SQL / Power BI workflows.
+In my **real banking experience**, I worked with **large corporate customers**
+(mainly using **SQL and Excel**) to:
 
-All datasets are **synthetic and generated in Python**.  
+- extract and clean data from internal systems,
+- build exposure / limit reports,
+- support risk and portfolio-analysis teams.
+
+I did **not** build machine-learning models in my bank role.
+
+This portfolio takes that corporate-banking context and extends it with
+modern **Python + modeling** on synthetic datasets to demonstrate my current
+skills for Data Analyst / Data Scientist / Analytics roles.
+
+All datasets here are **synthetic and generated in Python**.  
 No real bank, customer, or exposure data is used.
 
 ---
@@ -24,21 +32,29 @@ No real bank, customer, or exposure data is used.
   - written business summary for risk / portfolio stakeholders
 
 - `project2_corp_rating_early_warning/`  
-  Corporate rating panel & early-warning default model:
+  Corporate rating panel & early-warning modeling:
   - synthetic obligor–quarter panel (`corp_rating_panel.csv`)
   - EDA on ratings, migrations, and default rates
   - baseline early-warning models (LogReg, Random Forest, Gradient Boosting)
   - feature importance and business interpretation
 
-Each project has its own `README.md` that goes into more detail.
+Each project has its own `README.md` that goes into more detail and clearly
+states that the work is **synthetic** and goes beyond what I did in my prior
+banking role.
 
 ---
 
 ## Project 1 – Corporate Exposure & Concentration
 
-**Goal:** Monitor large corporate exposures and concentration risk by obligor,
-sector, and country, similar to a wholesale / corporate banking **limit and
-portfolio monitoring** pack.
+**Goal:** Recreate a simple **exposure and concentration pack** for large
+corporate obligors, similar to what is used in wholesale / corporate banking
+to monitor single-name, sector, and country concentrations.
+
+This project is **inspired by the type of data and reports** I worked with in
+banking (SQL + Excel), but:
+
+- the data is **fully synthetic**, and
+- all Python / Power BI elements are built specifically for this portfolio.
 
 Highlights:
 
@@ -60,9 +76,22 @@ See `project1_corp_exposure_dashboard/README.md` for details.
 
 ## Project 2 – Corporate Early-Warning Model
 
-**Goal:** Build a simple **early-warning model** for a wholesale corporate
-portfolio, predicting which obligors are most likely to default based on
-internal ratings and early-warning indicators.
+**Goal:** On top of a synthetic corporate rating panel, build simple
+**early-warning models** to predict which obligors are more likely to default,
+using ratings, financial ratios, and behavioural indicators.
+
+In my **real banking job**, I worked on:
+
+- extracting and cleaning corporate exposure data,
+- building portfolio and concentration views,
+- supporting risk teams with SQL/Excel analysis.
+
+The **modeling in this project is new work**, created specifically to show that
+I can take similar corporate data structures and build:
+
+- EDA on ratings and default patterns,
+- baseline classification models for early warning,
+- interpretable feature importance and business explanations.
 
 Highlights:
 
@@ -90,7 +119,7 @@ See `project2_corp_rating_early_warning/README.md` for details.
 - **Languages:** Python (pandas, scikit-learn), SQL
 - **Analytics / modeling:**
   - EDA, concentration metrics, rating migration
-  - classification models (LogReg, tree-based methods)
+  - classification models (LogReg, tree-based methods) on synthetic data
 - **BI & visualisation:** Power BI (and Tableau if needed)
 - **Workflow:** Jupyter notebooks, Git/GitHub, clear project structure and
   documentation.
