@@ -115,7 +115,11 @@ financial spreading tools, and internal risk data marts.
 
 - **(Optional) Model artefacts**
   - If needed, serialized models could be saved in a `models/` folder for
+<<<<<<< HEAD
     reuse in scoring or dashboards (not mandatory for this portfolio).
+=======
+    reuse in scoring or dashboards.
+>>>>>>> 430cbe2 (Clarify synthetic nature and separate banking experience from modeling work)
 
 ---
 

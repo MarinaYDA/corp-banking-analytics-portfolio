@@ -71,7 +71,7 @@ All data is **synthetic** and generated for this portfolio.
    - Rating distribution and sector/country cross-tabs.
 
 3. **Dashboard prep (`03_dashboard_prep.ipynb`)**  
-   - Create aggregated tables for a Power BI / Tableau dashboard:
+   - Create aggregated tables for a Power BI:
      - Top 20 groups table.
      - Exposure by sector / country / rating_band.
      - Exposure vs limit for selected sectors/countries.
@@ -156,4 +156,8 @@ No real bank, customer, or exposure data is used.
 
 In my real banking experience I focused on **SQL/Excel-based reporting and
 analysis** on corporate portfolios; this project extends that experience into a
+<<<<<<< HEAD
 modern, fully reproducible Python + BI workflow.
+=======
+modern, fully reproducible Python + BI workflow.
+>>>>>>> 430cbe2 (Clarify synthetic nature and separate banking experience from modeling work)

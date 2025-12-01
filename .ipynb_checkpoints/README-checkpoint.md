@@ -10,11 +10,6 @@ In my **real banking experience**, I worked with **large corporate customers**
 - build exposure / limit reports,
 - support risk and portfolio-analysis teams.
 
-<<<<<<< HEAD
-I did **not** build machine-learning models in my bank role.
-
-=======
->>>>>>> 430cbe2 (Clarify synthetic nature and separate banking experience from modeling work)
 This portfolio takes that corporate-banking context and extends it with
 modern **Python + modeling** on synthetic datasets to demonstrate my current
 skills for Data Analyst / Data Scientist / Analytics roles.
@@ -123,11 +118,7 @@ See `project2_corp_rating_early_warning/README.md` for details.
 - **Analytics / modeling:**
   - EDA, concentration metrics, rating migration
   - classification models (LogReg, tree-based methods) on synthetic data
-<<<<<<< HEAD
-- **BI & visualisation:** Power BI (and Tableau if needed)
-=======
 - **BI & visualisation:** Power BI 
->>>>>>> 430cbe2 (Clarify synthetic nature and separate banking experience from modeling work)
 - **Workflow:** Jupyter notebooks, Git/GitHub, clear project structure and
   documentation.
 
