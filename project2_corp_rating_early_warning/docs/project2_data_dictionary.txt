@@ -1,0 +1,43 @@
+project2_data_dictionary.txt
+Corporate Rating Panel & Early-Warning Modeling (Synthetic Data)
+
+File: data/corp_rating_panel.csv
+
+Each row = one obligor–quarter snapshot.
+
+Columns:
+
+- obligor_id: Synthetic numeric ID for the legal entity.
+- obligor_name: Synthetic name for the legal entity (e.g. Obligor_0001).
+- group_id: Synthetic numeric ID for the corporate group.
+- group_name: Synthetic corporate group name (e.g. Group_001).
+- country: Country code where the obligor is booked (e.g. "US", "DE").
+- sector: Broad industry sector (Manufacturing, TMT, Retail, Real Estate, Transport, Utilities, Energy, etc.).
+- as_of_date: Quarter-end date of the snapshot.
+
+Rating variables:
+- rating_numeric: Internal rating on a 1–10 scale (1 = best, 10 = default).
+- rating_band: Rating band derived from rating_numeric:
+    * Investment_Grade
+    * Sub_IG
+    * Watchlist
+    * Default
+
+Early-warning / risk features:
+- prev_rating: Previous quarter’s rating_numeric for the same obligor.
+- rating_change: Difference between current and previous rating (positive = downgrade).
+- is_upgrade: 1 if rating improved vs previous quarter, else 0.
+- is_downgrade: 1 if rating worsened vs previous quarter, else 0.
+- risk_score: Normalised risk score derived from rating_numeric (higher = riskier).
+- leverage: Approximate Debt / EBITDA (higher = more leveraged).
+- interest_coverage: EBIT / Interest expense (lower = weaker coverage).
+- ebitda_margin: EBITDA margin as a fraction of revenue.
+- days_past_due: Synthetic measure of days past due on payments.
+- exposure_at_default: Synthetic proxy for exposure-at-default (stored in millions).
+
+Target variables:
+- is_watchlist: 1 if the obligor sits in a Watchlist-type category and is not yet defaulted.
+- is_default: 1 if the obligor is currently in default.
+
+All values are synthetic and generated in Python for this portfolio project only.
+No real bank, customer, or exposure data is used.
