@@ -10,11 +10,10 @@ In my **real banking experience**, I worked with **large corporate customers**
 - build exposure / limit reports,
 - support risk and portfolio-analysis teams.
 
-<<<<<<< HEAD
 I did **not** build machine-learning models in my bank role.
 
 =======
->>>>>>> 430cbe2 (Clarify synthetic nature and separate banking experience from modeling work)
+
 This portfolio takes that corporate-banking context and extends it with
 modern **Python + modeling** on synthetic datasets to demonstrate my current
 skills for Data Analyst / Data Scientist / Analytics roles.
