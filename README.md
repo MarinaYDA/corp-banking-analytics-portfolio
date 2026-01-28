@@ -124,6 +124,26 @@ See `project2_corp_rating_early_warning/README.md` for details.
 - **Workflow:** Jupyter notebooks, Git/GitHub, clear project structure and
   documentation.
 
+## Generative AI in this portfolio
+
+To reflect modern workflows, I also used generative AI (ChatGPT) as a helper
+while building the corporate banking projects:
+
+- **Scenario & dataset design** – brainstorming realistic-but-synthetic
+  structures for a corporate exposure snapshot, limits tables, and a rating
+  panel (obligor–quarter, ratings, PD drivers).
+- **Analytics patterns** – getting ideas for standard exposure/concentration
+  views (top N groups, sector/country cuts, rating distributions) and then
+  implementing them myself in Python and SQL.
+- **Modeling workflow** – drafting baseline pipelines (train/test split, basic
+  preprocessing, logistic regression and tree-based models) and then refining
+  the code, metrics, and interpretation.
+- **Narrative & documentation** – accelerating the first draft of README files
+  and business summaries, then editing to ensure they match my real experience
+  and the synthetic data design.
+
+Again, generative AI was a co-pilot: it helped with speed and structure, while
+I controlled the data design, logic, and final outputs.
 ---
 
 ## How to run the notebooks
